@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reporteEmpresas" language="groovy" pageWidth="612" pageHeight="792" columnWidth="572" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f5e9a16e-2a4e-42bf-b050-59ff048b6c79">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="imagenEncabezado" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="imagenPie" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[CALL sp_ListarEmpresas();]]>
+	</queryString>
+	<field name="codigoEmpresa" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombreEmpresa" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="direccion" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="telefono" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<variable name="nombreEmpresa_1" class="java.lang.Integer" resetType="Column" calculation="Count">
+		<variableExpression><![CDATA[$F{nombreEmpresa}]]></variableExpression>
+	</variable>
+	<variable name="nombreEmpresa_2" class="java.lang.Integer" resetType="Column" calculation="DistinctCount">
+		<variableExpression><![CDATA[$F{nombreEmpresa}]]></variableExpression>
+	</variable>
+	<variable name="nombreEmpresa_3" class="java.lang.Integer" resetType="Column" calculation="Count">
+		<variableExpression><![CDATA[$F{nombreEmpresa}]]></variableExpression>
+	</variable>
+	<title>
+		<band height="133" splitType="Stretch">
+			<staticText>
+				<reportElement x="172" y="23" width="234" height="27" forecolor="#FFFFE1" uuid="ec4eb58f-5d2d-49fa-ab3f-9428a556e32c"/>
+				<textElement>
+					<font fontName="Bookman Old Style" size="20" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1258"/>
+				</textElement>
+				<text><![CDATA[REPORTE EMPRESAS]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy h.mm a">
+				<reportElement x="422" y="9" width="141" height="20" forecolor="#FFFFFF" uuid="7cb9cfcd-4ef4-43a6-ac3a-80a1685f3dfd"/>
+				<textElement>
+					<font fontName="Bookman Old Style" size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<image scaleImage="FillFrame">
+				<reportElement x="1" y="0" width="572" height="133" uuid="479ce0ce-6db1-4481-abb0-91f293ac5fbf"/>
+				<imageExpression><![CDATA[$P{imagenEncabezado}]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="21" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="36" splitType="Stretch">
+			<staticText>
+				<reportElement x="12" y="9" width="51" height="20" uuid="b077a128-851d-4a83-b4e6-e0457890e07c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Bookman Old Style" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Código]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="85" y="9" width="138" height="20" uuid="fb309cfd-2953-46c7-98ae-efb7cafc20fa"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Bookman Old Style" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Empresa]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="301" y="9" width="138" height="20" uuid="26b8a3ad-4d22-4bd6-b7fd-0168cc3e7738"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Bookman Old Style" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Dirección]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="502" y="10" width="63" height="20" uuid="13b39a49-5cde-4f50-a1a2-06f3c221c98b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Bookman Old Style" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Teléfono]]></text>
+			</staticText>
+			<line>
+				<reportElement x="76" y="0" width="1" height="36" uuid="3a2f9bb5-6ef5-4057-9256-2312a5de8357"/>
+			</line>
+			<line>
+				<reportElement x="233" y="0" width="1" height="36" uuid="50e885a0-7127-422a-84bc-54e7d10ca715"/>
+			</line>
+			<line>
+				<reportElement x="493" y="0" width="1" height="36" uuid="4c30fbc2-5293-49a7-94e3-8bde5c7ae3ec"/>
+			</line>
+			<line>
+				<reportElement x="0" y="0" width="572" height="1" uuid="9cd56fdd-90b0-4f62-85f5-7c731e81ee22"/>
+			</line>
+			<line>
+				<reportElement x="0" y="35" width="572" height="1" uuid="0c5eeba6-e4dc-4c13-993d-cfe50bfa31ce"/>
+			</line>
+			<line>
+				<reportElement x="0" y="0" width="1" height="36" uuid="36dd45b7-b597-437f-ae31-e3517a15d602"/>
+			</line>
+			<line>
+				<reportElement x="571" y="0" width="1" height="36" uuid="e15b0534-f673-49c3-91a6-c408b1e0cdbc"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<line>
+				<reportElement x="571" y="-1" width="1" height="21" uuid="21d64a48-d6a3-44b2-8047-7673e354c39f"/>
+			</line>
+			<line>
+				<reportElement x="493" y="-1" width="1" height="21" uuid="24e01a72-4723-4f13-9198-0b5ebd7a72b7"/>
+			</line>
+			<line>
+				<reportElement x="76" y="-1" width="1" height="21" uuid="166f6009-e6aa-474b-a775-8d653f0a9d5e"/>
+			</line>
+			<textField>
+				<reportElement x="85" y="0" width="138" height="20" uuid="bd5c72d6-58ff-4f71-aca5-50d276308a9a"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombreEmpresa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="237" y="0" width="252" height="20" uuid="6012f36e-338c-4daf-a8a1-c06ae4227edb"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{direccion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="502" y="0" width="63" height="20" uuid="a6ba0d48-8c79-4b2c-b5ff-dc70f5b20e3a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{telefono}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="12" y="0" width="51" height="20" uuid="28f1388e-772f-4227-98f4-420a1abd7b0d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{codigoEmpresa}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="233" y="-1" width="1" height="21" uuid="29fa8a90-343d-4559-b770-d5795775ac93"/>
+			</line>
+			<line>
+				<reportElement x="0" y="-1" width="1" height="21" uuid="4e680831-2807-40cb-9081-33ccffb46d8d"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="103" splitType="Stretch">
+			<image scaleImage="FillFrame">
+				<reportElement x="1" y="0" width="572" height="103" uuid="6f664795-caa7-4d59-8f07-7938ce033654"/>
+				<imageExpression><![CDATA[$P{imagenPie}]]></imageExpression>
+			</image>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch">
+			<staticText>
+				<reportElement x="1" y="0" width="179" height="20" forecolor="#FF0033" uuid="6b7558c7-f7b2-406a-9349-41b5dfa550b6"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Bookman Old Style" size="10" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[servicios@tonyskinal.com.gt]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="20" width="179" height="20" forecolor="#FF0033" uuid="255d8b33-d3ac-4030-870f-7c84d4b54243"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Bookman Old Style" size="10" isBold="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Tel: 2444-1515]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="0" width="572" height="1" uuid="f891f1ae-1da3-4397-b244-da40d10b1385"/>
+			</line>
+		</band>
+	</summary>
+</jasperReport>

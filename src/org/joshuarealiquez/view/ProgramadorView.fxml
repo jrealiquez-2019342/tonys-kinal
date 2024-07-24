@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="544.0" stylesheets="@../resource/TonysKinal.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.joshuarealiquez.controller.ProgramadorController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="251.0" layoutX="323.0" layoutY="187.0" stroke="BLACK" strokeType="INSIDE" styleClass="marco" width="193.0" />
+      <ImageView fitHeight="757.0" fitWidth="778.0" layoutY="-112.0" opacity="0.25" pickOnBounds="true" preserveRatio="true" styleClass="backgroundsImages">
+         <image>
+            <Image url="@../image/backgroundChef.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="244.0" fitWidth="187.0" layoutX="328.0" layoutY="190.0" pickOnBounds="true" preserveRatio="true" styleClass="txtImagenes">
+         <image>
+            <Image url="@../image/programador.jpg" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="60.0" layoutY="580.0" stroke="BLACK" strokeType="INSIDE" styleClass="marco" width="750.0" />
+      <ImageView fitHeight="35.0" fitWidth="49.0" layoutX="24.0" layoutY="588.0" onMouseClicked="#menuPrincipal" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/dona3.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="66.0" layoutY="329.0" prefHeight="35.0" prefWidth="210.0" styleClass="textProgramador" text="Joshua Elí Isaac">
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="66.0" layoutY="277.0" prefHeight="35.0" prefWidth="210.0" styleClass="textProgramador" text="Realiquez Sosa" textAlignment="CENTER">
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="66.0" layoutY="376.0" prefHeight="35.0" prefWidth="210.0" styleClass="textProgramador" text="2019342" />
+      <Label layoutX="66.0" layoutY="229.0" prefHeight="35.0" prefWidth="210.0" styleClass="textProgramador" stylesheets="@../resource/TonysKinal.css" text="IN5AM">
+         <font>
+            <Font size="17.0" />
+         </font></Label>
+      <Label layoutX="324.0" layoutY="597.0" prefHeight="18.0" prefWidth="187.0" styleClass="txtCorreos" text="jrealiquez-2019342@kinal.edu.gt" textFill="WHITE" />
+   </children>
+</AnchorPane>

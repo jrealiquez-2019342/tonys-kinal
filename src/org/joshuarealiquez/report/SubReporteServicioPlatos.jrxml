@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="SubReporteServicioPlatos" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="12cfda19-6306-4771-9c1d-8c76573ea044">
+	<property name="ireport.zoom" value="3.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="codEmpresa" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[CALL sp_ReporteServicioPlatos($P{codEmpresa});]]>
+	</queryString>
+	<field name="descripcionTipo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombrePlato" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="descripcionPlato" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="precioPlato" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<columnHeader>
+		<band height="22" splitType="Stretch">
+			<staticText>
+				<reportElement x="83" y="0" width="100" height="20" uuid="b6df11a0-e40b-4b8d-9a91-a252e6f6134c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="78" height="20" uuid="b7d3da6a-4774-49b6-9778-3075e31d4953"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Plato]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="186" y="0" width="302" height="20" uuid="469ba519-722e-45d9-ae99-7761a6d2ad49"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Descripción]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="494" y="0" width="79" height="20" uuid="3c093dae-4eeb-4693-b8bc-cc427206c33e"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Precio]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="23" splitType="Stretch">
+			<textField>
+				<reportElement x="83" y="0" width="100" height="20" uuid="779d1e3e-6b1a-4095-bca7-957b71792c1c"/>
+				<textFieldExpression><![CDATA[$F{nombrePlato}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="78" height="20" uuid="b0ffc37c-1707-4b17-bdcf-dd5ffcd4f60c"/>
+				<textFieldExpression><![CDATA[$F{descripcionTipo}]]></textFieldExpression>
+			</textField>
+			<textField pattern="¤ #,##0.00">
+				<reportElement x="494" y="0" width="79" height="20" uuid="2820a7f4-861d-40a9-8fd4-7a0c94298904"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{precioPlato}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="186" y="0" width="305" height="20" uuid="b104528c-1fae-4a31-9601-81a8aa3885eb"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{descripcionPlato}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

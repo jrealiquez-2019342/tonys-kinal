@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="SubReporteServicioProductos" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f7ee1cd5-2d82-4e93-b67b-40c3c90f20b5">
+	<property name="ireport.zoom" value="4.0"/>
+	<property name="ireport.x" value="147"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="codEmpresa" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[CALL sp_ReporteServicioProductos($P{codEmpresa});]]>
+	</queryString>
+	<field name="nombreProducto" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="COUNT(Pr.nombreProducto)" class="java.lang.Long"/>
+	<columnHeader>
+		<band height="23" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="243" height="20" uuid="1860a6b5-5ca5-442c-8cc2-b37f6911e180"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Productos Usados]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="282" y="3" width="101" height="20" uuid="63d7a8c2-250f-45bb-a558-08cf8fd0f4b4"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cantidad]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="22" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="243" height="20" uuid="28421050-f2b5-4598-a755-30b7772e7e6c"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombreProducto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="282" y="0" width="101" height="20" uuid="3570de1a-d63b-4826-8cd4-36eb4257d1bb"/>
+				<textElement textAlignment="Center" verticalAlignment="Top"/>
+				<textFieldExpression><![CDATA[$F{COUNT(Pr.nombreProducto)}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

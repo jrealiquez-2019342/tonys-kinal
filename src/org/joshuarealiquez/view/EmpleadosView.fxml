@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="1273.0" style="-fx-background-color: #DADADA;" stylesheets="@../resource/TonysKinal.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.joshuarealiquez.controller.EmpleadosController">
+   <children>
+      <ImageView fitHeight="674.0" fitWidth="656.0" layoutX="-369.0" layoutY="-8.0" pickOnBounds="true" preserveRatio="true" styleClass="backgroundsImages">
+         <image>
+            <Image url="@../image/backgroundChef.jpg" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="640.0" stroke="BLACK" strokeType="INSIDE" styleClass="barrasLaterales" width="280.0" />
+      <Button fx:id="btnReporte" alignment="BOTTOM_CENTER" contentDisplay="BOTTOM" layoutX="150.0" layoutY="373.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="110.0" styleClass="btnEmpresa" text="REPORTE">
+         <graphic>
+            <ImageView fx:id="imgReporte" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/reportIcon.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="btnEditar" alignment="BOTTOM_CENTER" contentDisplay="BOTTOM" layoutX="150.0" layoutY="269.0" mnemonicParsing="false" onAction="#editar" prefHeight="90.0" prefWidth="110.0" styleClass="btnEmpresa" text="EDITAR" textAlignment="JUSTIFY" textOverrun="CLIP">
+         <graphic>
+            <ImageView fx:id="imgEditar" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/editIcon.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="btnEliminar" alignment="BOTTOM_CENTER" contentDisplay="BOTTOM" layoutX="26.0" layoutY="373.0" mnemonicParsing="false" onAction="#eliminar" prefHeight="90.0" prefWidth="110.0" styleClass="btnEmpresa" text="ELIMINAR" textAlignment="CENTER">
+         <graphic>
+            <ImageView fx:id="imgEliminar" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/deleteIcon.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="btnNuevo" alignment="BOTTOM_CENTER" contentDisplay="BOTTOM" layoutX="26.0" layoutY="269.0" mnemonicParsing="false" onAction="#nuevo" prefHeight="90.0" prefWidth="110.0" styleClass="btnEmpresa" text="NUEVO">
+         <graphic>
+            <ImageView fx:id="imgNuevo" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/addIcon.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font>
+      </Button>
+      <Pane layoutX="40.0" layoutY="25.0" prefHeight="215.0" prefWidth="200.0" styleClass="marcoRedondo">
+         <children>
+            <ImageView fitHeight="117.0" fitWidth="179.0" layoutX="11.0" layoutY="108.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/empleadosIcon.png" />
+               </image>
+            </ImageView>
+            <Label alignment="CENTER" layoutX="6.0" layoutY="29.0" prefHeight="36.0" prefWidth="190.0" styleClass="txtTituloVentana" text="EMPLEADOS" textFill="#ff6e13">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="27.0" layoutY="492.0" mnemonicParsing="false" onAction="#menuPrincipal" prefHeight="50.0" prefWidth="232.0" styleClass="btnEmpresa" text="HOME" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="640.0" layoutX="279.0" stroke="BLACK" strokeType="INSIDE" styleClass="barraPrincipal" width="994.0" />
+      <ImageView fitHeight="376.0" fitWidth="364.0" layoutX="593.0" layoutY="132.0" opacity="0.5" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/logoFinal.png" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="80.0" layoutY="560.0" stroke="BLACK" strokeType="INSIDE" styleClass="marco" width="1273.0" />
+      <GridPane layoutX="314.0" layoutY="14.0" prefHeight="115.0" prefWidth="913.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="18.0" prefWidth="224.0" text="Código Empleado">
+               <font>
+                  <Font name="Britannic Bold" size="17.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </GridPane.margin>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="18.0" prefWidth="223.0" text="Número Empleado" GridPane.columnIndex="1">
+               <font>
+                  <Font name="Britannic Bold" size="17.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </GridPane.margin>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="18.0" prefWidth="220.0" text="Nombres" GridPane.columnIndex="2">
+               <font>
+                  <Font name="Britannic Bold" size="17.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </GridPane.margin>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="18.0" prefWidth="222.0" text="Dirección Empleado" GridPane.rowIndex="2">
+               <font>
+                  <Font name="Britannic Bold" size="17.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </GridPane.margin>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="18.0" prefWidth="218.0" text="Teléfono" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <font>
+                  <Font name="Britannic Bold" size="17.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </GridPane.margin>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="18.0" prefWidth="217.0" text="Grado Cocinero" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <font>
+                  <Font name="Britannic Bold" size="17.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </GridPane.margin>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="18.0" prefWidth="222.0" text="Apellidos" GridPane.columnIndex="3">
+               <font>
+                  <Font name="Britannic Bold" size="17.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </GridPane.margin>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="18.0" prefWidth="218.0" text="Código Tipo Empleado" GridPane.columnIndex="3" GridPane.rowIndex="2">
+               <font>
+                  <Font name="Britannic Bold" size="17.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </GridPane.margin>
+            </Label>
+            <TextField fx:id="txtCodigoEmpleado" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </GridPane.margin>
+            </TextField>
+            <TextField fx:id="txtNumeroEmpleado" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </GridPane.margin>
+            </TextField>
+            <TextField fx:id="txtDireccionEmpleado" GridPane.rowIndex="3">
+               <GridPane.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </GridPane.margin>
+            </TextField>
+            <TextField fx:id="txtTelefonoContactoEmpleado" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <GridPane.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </GridPane.margin>
+            </TextField>
+            <TextField fx:id="txtGradoCocineroEmpleado" GridPane.columnIndex="2" GridPane.rowIndex="3">
+               <GridPane.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </GridPane.margin>
+            </TextField>
+            <TextField fx:id="txtNombresEmpleado" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </GridPane.margin>
+            </TextField>
+            <TextField fx:id="txtApellidosEmpleado" GridPane.columnIndex="3" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </GridPane.margin>
+            </TextField>
+            <ComboBox fx:id="cmbCodigoTipoEmpleado" prefHeight="25.0" prefWidth="229.0" promptText="Seleccionar Tipo Empleado" GridPane.columnIndex="3" GridPane.rowIndex="3">
+               <GridPane.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </GridPane.margin>
+            </ComboBox>
+         </children>
+      </GridPane>
+      <TableView fx:id="tblEmpleados" layoutX="300.0" layoutY="160.0" onKeyReleased="#seleccionar" onMouseClicked="#seleccionar" prefHeight="333.0" prefWidth="947.0">
+        <columns>
+          <TableColumn fx:id="colCodigoEmpleado" prefWidth="73.0" text="Cod. Emp" />
+          <TableColumn fx:id="colNumeroEmpleado" prefWidth="92.0" text="No. Empleado" />
+            <TableColumn fx:id="colApellidosEmpleado" prefWidth="117.0" text="Apellidos" />
+            <TableColumn fx:id="colNombresEmpleado" prefWidth="161.0" text="Nombres" />
+            <TableColumn fx:id="colDireccionEmpleado" prefWidth="250.0" text="Dirección" />
+            <TableColumn fx:id="colTelefonoEmpleado" prefWidth="60.0" text="Teléfono" />
+            <TableColumn fx:id="colGradoCocineroEmpleado" prefWidth="109.0" text="Grado Cocinero" />
+            <TableColumn fx:id="colCodigoTipoEmpleado" prefWidth="84.0" text="Cod. T. Emp" />
+        </columns>
+      </TableView>
+      <Button layoutX="25.0" layoutY="576.0" mnemonicParsing="false" onAction="#back" prefHeight="50.0" prefWidth="75.0" styleClass="btnBack">
+         <graphic>
+            <ImageView fitHeight="27.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/arrowBack.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+   </children>
+</AnchorPane>

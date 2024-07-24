@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="1013.0" style="-fx-background-color: #DADADA;" stylesheets="@../resource/TonysKinal.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.joshuarealiquez.controller.ProductosController">
+   <children>
+      <ImageView fitHeight="674.0" fitWidth="656.0" layoutX="-346.0" layoutY="-8.0" pickOnBounds="true" preserveRatio="true" styleClass="backgroundsImages">
+         <image>
+            <Image url="@../image/backgroundChef.jpg" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="640.0" layoutY="-1.0" stroke="BLACK" strokeType="INSIDE" styleClass="barrasLaterales" width="280.0" />
+      <Button fx:id="btnReporte" alignment="BOTTOM_CENTER" contentDisplay="BOTTOM" layoutX="150.0" layoutY="373.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="110.0" styleClass="btnEmpresa" text="REPORTE">
+         <graphic>
+            <ImageView fx:id="imgReporte" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/reportIcon.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="btnEditar" alignment="BOTTOM_CENTER" contentDisplay="BOTTOM" layoutX="150.0" layoutY="269.0" mnemonicParsing="false" onAction="#editar" prefHeight="90.0" prefWidth="110.0" styleClass="btnEmpresa" text="EDITAR" textAlignment="JUSTIFY" textOverrun="CLIP">
+         <graphic>
+            <ImageView fx:id="imgEditar" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/editIcon.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="btnEliminar" alignment="BOTTOM_CENTER" contentDisplay="BOTTOM" layoutX="26.0" layoutY="373.0" mnemonicParsing="false" onAction="#eliminar" prefHeight="90.0" prefWidth="110.0" styleClass="btnEmpresa" text="ELIMINAR" textAlignment="CENTER">
+         <graphic>
+            <ImageView fx:id="imgEliminar" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/deleteIcon.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="btnNuevo" alignment="BOTTOM_CENTER" contentDisplay="BOTTOM" layoutX="26.0" layoutY="269.0" mnemonicParsing="false" onAction="#nuevo" prefHeight="90.0" prefWidth="110.0" styleClass="btnEmpresa" text="NUEVO">
+         <graphic>
+            <ImageView fx:id="imgNuevo" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/addIcon.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font>
+      </Button>
+      <Pane layoutX="40.0" layoutY="25.0" prefHeight="215.0" prefWidth="200.0" styleClass="marcoRedondo">
+         <children>
+            <ImageView fitHeight="117.0" fitWidth="179.0" layoutX="42.0" layoutY="84.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/productsIcon.png" />
+               </image>
+            </ImageView>
+            <Label alignment="CENTER" layoutX="6.0" layoutY="29.0" prefHeight="36.0" prefWidth="190.0" styleClass="txtTituloVentana" text="PRODUCTOS" textFill="#ff6e13">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="20.0" layoutY="497.0" mnemonicParsing="false" onAction="#menuPrincipal" prefHeight="50.0" prefWidth="240.0" styleClass="btnEmpresa" text="HOME" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="640.0" layoutX="278.0" layoutY="-1.0" stroke="BLACK" strokeType="INSIDE" styleClass="barraPrincipal" width="735.0" />
+      <ImageView fitHeight="376.0" fitWidth="364.0" layoutX="427.0" layoutY="171.0" opacity="0.5" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/logoFinal.png" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="60.0" layoutX="-26.0" layoutY="580.0" stroke="BLACK" strokeType="INSIDE" styleClass="marco" width="1048.0" />
+      <GridPane layoutX="308.0" layoutY="24.0" prefHeight="90.0" prefWidth="674.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label alignment="CENTER" prefHeight="18.0" prefWidth="227.0" text="Código Producto">
+               <font>
+                  <Font name="Britannic Bold" size="17.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefHeight="18.0" prefWidth="227.0" text="Nombre" GridPane.columnIndex="1">
+               <font>
+                  <Font name="Britannic Bold" size="17.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefHeight="18.0" prefWidth="226.0" text="Cantidad" GridPane.columnIndex="2">
+               <font>
+                  <Font name="Britannic Bold" size="17.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtCodigoProducto" editable="false" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets right="5.0" />
+               </GridPane.margin>
+            </TextField>
+            <TextField fx:id="txtNombreProducto" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="5.0" right="5.0" />
+               </GridPane.margin>
+            </TextField>
+            <TextField fx:id="txtCantidadProducto" editable="false" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="5.0" right="5.0" />
+               </GridPane.margin>
+            </TextField>
+         </children>
+      </GridPane>
+      <Label fx:id="lbCampoVacioNomProduct" layoutX="539.0" layoutY="109.0" text="*Campo vacio" textFill="RED">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbCampoVacioCantProduct" layoutX="764.0" layoutY="109.0" text="*Campo vacio" textFill="RED">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tblProductos" layoutX="306.0" layoutY="171.0" onKeyReleased="#seleccionarElemento" onMouseClicked="#seleccionarElemento" prefHeight="333.0" prefWidth="665.0">
+        <columns>
+          <TableColumn fx:id="colCodigoProducto" prefWidth="113.0" text="Cod. Producto" />
+          <TableColumn fx:id="colNombreProducto" prefWidth="339.0" text="Nombre" />
+            <TableColumn fx:id="colCantidadProducto" prefWidth="212.0" text="Cantidad" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

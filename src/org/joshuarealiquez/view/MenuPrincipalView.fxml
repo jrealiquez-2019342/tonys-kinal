@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="630.0" stylesheets="@../resource/TonysKinal.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.joshuarealiquez.controller.MenuPrincipalController">
+   <children>
+      <ImageView fitHeight="656.0" fitWidth="666.0" layoutX="-16.0" layoutY="-8.0" opacity="0.2" pickOnBounds="true" preserveRatio="true" styleClass="backgroundsImages">
+         <image>
+            <Image url="@../image/backgroundChef.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="299.0" fitWidth="281.0" layoutX="174.0" layoutY="170.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/logoFinal.png" />
+         </image>
+      </ImageView>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="247.0" layoutY="486.0" prefHeight="44.0" prefWidth="136.0" styleClass="textEslogan" text="EAT WELL" textAlignment="CENTER" textFill="#b54646" />
+      <MenuBar nodeOrientation="LEFT_TO_RIGHT" opacity="0.7" prefHeight="44.0" prefWidth="630.0" stylesheets="@../resource/TonysKinal.css">
+        <menus>
+          <Menu mnemonicParsing="false" text="Módulos">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#ventanaEmpresa" text="Empresas" />
+                  <MenuItem mnemonicParsing="false" onAction="#ventanaProductos" text="Productos" />
+                  <MenuItem mnemonicParsing="false" onAction="#ventanaTipoEmpleado" text="Tipo Empleado" />
+                  <MenuItem mnemonicParsing="false" onAction="#ventanaTipoPlato" text="Tipo Plato" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Tablas de Unión">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#ventanaProductosPlatos" text="Productos y Platos" />
+                  <MenuItem mnemonicParsing="false" onAction="#ventanaServiciosPlatos" text="Servicios y Platos" />
+                  <MenuItem mnemonicParsing="false" onAction="#ventanaServiciosEmpleados" text="Servicios y Empleados" />
+               </items>
+            </Menu>
+          <Menu mnemonicParsing="false" text="Reportes">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Reporte Productos" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="?">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#ventanaProgramador" text="Programador" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Cerrar Sesión">
+               <graphic>
+                  <ImageView fitHeight="19.0" fitWidth="23.0" onMouseClicked="#cerrarSesion" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/poweOffIco.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#cerrarSesion" text="Log out                 " />
+               </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+      <Label layoutX="152.0" layoutY="609.0" text="Copyright © 2023 Tonys Kinal todos los derechos reservados." textFill="#07070f" />
+   </children>
+</AnchorPane>
